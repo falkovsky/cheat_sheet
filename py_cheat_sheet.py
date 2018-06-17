@@ -24,6 +24,13 @@ t = t + t2
 print(t)
 # (1, 2, 'text', True, 100500, 'more text', 9, 8, 7, 'text', 10)
 
+# Splits string by a separator value and maxsplit times
+str.split(sep=None, maxsplit=1)
+
+str_sys = '/bin:/usr/bin:/usr/local/bin'
+str_sys.split(sep=':')
+# ['/bin', '/usr/bin', '/usr/local/bin']
+
 # Example of check for non-text elements:
 for i in t:
 	if not isinstance(i, str):
@@ -174,3 +181,15 @@ print(d)
 popped = d.pop('new')
 print(popped)
 # item
+
+# EXCEPTIONS
+
+try:
+	r = 1 / 0
+except ValueError:
+	print("Error happened")
+except ZeroDivisionError:
+	print('Can\'t divide for zero' )
+except TypeError:
+	print('Wrong type')
+
