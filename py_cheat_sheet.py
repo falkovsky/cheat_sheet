@@ -193,3 +193,84 @@ except ZeroDivisionError:
 except TypeError:
 	print('Wrong type')
 
+# =============================================
+
+try:
+	print(1 / 0)
+except ZeroDivisionError as e:
+	print('Exception! Can\'t divide!')
+	print(e)
+
+# Raise an exception and catch raised exception:
+
+try:
+	raise TypeError('Some error!')
+except TypeError as e:
+	print(e)
+
+# ===============================================
+
+try:
+	print(1 / 0)
+except ZeroDivisionError:
+	print('0!')
+finally:
+	print('This will be executed anyway!')
+
+# FUNCTIONS
+
+# Function with two parameters:
+
+def my_sum(a, b):
+	res = a * b
+	return res
+x = my_sum(5, 3)
+print(x)
+
+# ====================================
+
+def with_default(name='John'):
+	print('Hello', name)
+
+# =======================================
+
+def with_few(pos, default_arg='some'):
+	print(pos, default_arg)
+
+# =======================================
+
+# Function with args, non-limit:
+
+def sum_all(*numbers):
+	print(numbers, type(numbers))
+
+print(sum_all(1, 8))
+# (1, 8) <class 'tuple'>
+# ------------------------------------
+# Example:
+
+def sum_all(*numbers):
+	res = 0
+	# print(numbers, type(numbers))
+	for i in numbers:
+		res = res + i
+	return res
+
+print(sum_all(1, 8, 12, 15, 2, 100))
+# 138
+
+# ======================================
+
+# Function with keyword args (**kwargs):
+
+def my_func2(**words):
+  print(words, type(words))
+
+my_func('one', 'two', 'three')
+# ('one', 'two', 'three') <class 'tuple'>
+
+def any_keywords(**kwargs):
+	print(kwargs, type(kwargs))
+
+any_keywords(first=1, second=2, third=3)
+# {'first': 1, 'second': 2, 'third': 3} <class 'dict'>
